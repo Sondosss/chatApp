@@ -2,7 +2,6 @@ import 'package:chat/services/auth/auth_gate.dart';
 import 'package:chat/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'themes/light_mode.dart';
 import 'themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 //import 'auth/login_or_register.dart';
@@ -10,9 +9,10 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp( 
-    ChangeNotifierProvider(create: (context) => ThemeProvider(),
-    child: const MyApp(),
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
     ),
   );
 }
